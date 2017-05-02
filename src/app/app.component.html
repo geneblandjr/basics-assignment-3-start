@@ -12,8 +12,19 @@
   </div>
 </div>
 <hr>
-<button>Display Details</button>
+<button
+        class="btn btn-primary"
+        (click)="onDisplayDetails()">Display Details (Button Clicked {{ buttonclickedCnt }} times.)  {{ buttonLogMsg }}
+</button>
 <hr>
-<p>On Bright Day, in the middle of the Night, Two Dead Men got up to fight, Back to Back they faced each other, Drew their swords and shot each other.  A Deaf Policeman heard the noise, got up and shot the boys.  If you don't believe this lie is true, Ask the Blind Man, he saw it too.</p>
+<p [ngStyle]="{backgroundColor: getBackgroundColor()}"
+   [ngClass]="{greaterLimit: buttonclickedCnt > 4 }"
+   >
+{{ buttonLogMsgs[(buttonLogMsgs.length - 1)] }}
+</p>
 <hr>
+<p *ngIf="displayDetails">On Bright Day, in the middle of the Night, Two Dead Men got up to fight, Back to Back they faced each other, Drew their swords and shot each other.  A Deaf Policeman heard the noise, got up and shot the boys.  If you don't believe this lie is true, Ask the Blind Man, he saw it too.</p>
+<hr>
+<app-app-button-log *ngFor=" let logmsg of buttonLogMsgs "></app-app-button-log>
 
+<!--   [ngClass]="{greaterLimit: overLimit }" -->
