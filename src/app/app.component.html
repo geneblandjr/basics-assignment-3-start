@@ -25,6 +25,6 @@
 <hr>
 <p *ngIf="displayDetails">On Bright Day, in the middle of the Night, Two Dead Men got up to fight, Back to Back they faced each other, Drew their swords and shot each other.  A Deaf Policeman heard the noise, got up and shot the boys.  If you don't believe this lie is true, Ask the Blind Man, he saw it too.</p>
 <hr>
-<app-app-button-log *ngFor=" let logmsg of buttonLogMsgs " [logmsg]="logmsg" [buttonclickedCnt]="buttonclickedCnt"></app-app-button-log>
+<app-app-button-log *ngFor="let logmsg of buttonLogMsgs; let buttonclickedCnt=index "  [logmsg]="logmsg"  [buttonclickedCnt]="buttonclickedCnt"></app-app-button-log>
 
 <!--   [ngClass]="{greaterLimit: overLimit }" -->
